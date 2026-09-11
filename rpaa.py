@@ -2,8 +2,6 @@
 
 import os,sys,zlib,pickle,shutil
 
-verya1=('.png','.webp','.jpg','.jpeg','.ogg','.mp3','.opus','.m4a')
-
 def verya2():
     verya3=sys.argv[1:]
     for verya4 in verya3:
@@ -33,7 +31,7 @@ def verya2():
                     verya13.seek(verya17)
                     verya18=pickle.loads(zlib.decompress(verya13.read()))
                     for verya19 in verya18:
-                        if not verya19.lower().endswith(verya1):continue
+                        if not verya19.lower().endswith(('.png','.webp','.jpg','.jpeg','.ogg','.mp3','.opus','.m4a')):continue
                         verya20=verya18[verya19][0]
                         if len(verya20)==3:
                             verya21,verya22,verya23=verya20
@@ -53,7 +51,7 @@ def verya2():
                     verya13.close()
                 except:
                     pass
-            elif verya12.endswith(verya1):
+            elif verya12.endswith(('.png','.webp','.jpg','.jpeg','.ogg','.mp3','.opus','.m4a')):
                 try:
                     shutil.copy(verya11,os.path.join(verya5,os.path.basename(verya11)))
                 except:
